@@ -1,0 +1,18 @@
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div *ngFor="let post of posts" class="card m-4">
+            <div class="card-body">
+                <h5 class="card-title">Nombre del post: {{post.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Autor: {{post.creator}}</h6>
+                <p class="card-text">Descripcion: {{post.description}}</p>
+                <button class="btn btn-danger" (click)="deletePost(post._id)">
+                    Borrar
+                </button>
+                <button [routerLink]="['/posts/edit', post._id]" class="btn btn-secondary">
+                    Edit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
